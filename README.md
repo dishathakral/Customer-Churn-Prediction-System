@@ -14,6 +14,106 @@ The solution consists of:
 
 ---
 
+# Technologies Used
+
+* Python
+* FastAPI
+* Streamlit
+* Scikit-learn
+* Pandas
+* NumPy
+* SQLite
+* Joblib
+* Pydantic
+
+---
+
+# Dataset
+
+## Dataset Source
+
+This project uses the **Telco Customer Churn Dataset**, a widely used dataset for binary classification and customer churn prediction.
+
+Dataset Link:
+
+https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+
+## Dataset Description
+
+The dataset contains customer-level information collected by a telecommunications company, including:
+
+* Demographic information
+
+  * Gender
+  * Senior Citizen status
+  * Partner
+  * Dependents
+
+* Account information
+
+  * Tenure
+  * Contract type
+  * Payment method
+
+* Service subscriptions
+
+  * Internet service
+  * Online Security
+  * Online Backup
+  * Device Protection
+  * Technical Support
+  * Streaming services
+
+* Billing information
+
+  * Monthly Charges
+  * Total Charges
+
+Target Variable:
+
+```text
+Churn
+```
+
+* Yes → Customer left the company
+* No → Customer stayed with the company
+
+---
+
+## Dataset Preparation
+
+The training pipeline performs the following preprocessing steps:
+
+1. Data cleaning and handling missing values.
+2. Conversion of the target variable into binary format.
+3. Feature engineering.
+4. One-hot encoding of categorical variables.
+5. Feature selection and model training.
+6. Hyperparameter tuning using GridSearchCV.
+
+---
+
+## Reproducing Model Training
+
+To reproduce the trained model:
+
+1. Download the dataset from the Kaggle link above.
+2. Place the dataset file in the project root directory.
+3. Open the training notebook:
+
+```bash
+jupyter notebook train_model.ipynb
+```
+
+4. Run all notebook cells from start to finish.
+5. The notebook will generate:
+
+```text
+model.pkl
+```
+
+6. The generated model can then be used directly by the FastAPI application.
+
 # Project Structure
 
 ```text
