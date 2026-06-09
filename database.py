@@ -11,7 +11,7 @@ def init_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         timestamp TEXT,
         input_features TEXT,
-        prediction INTEGER,
+        prediction TEXT,
         confidence REAL
     )
     """)
