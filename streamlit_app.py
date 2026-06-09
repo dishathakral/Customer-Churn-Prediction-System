@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+API_URL = "https://customer-churn-prediction-system-aivr.onrender.com"
 st.set_page_config(
     page_title="Customer Churn Predictor",
     page_icon="📊",
@@ -183,7 +184,7 @@ with tab1:
     if predict_btn:
 
         response = requests.post(
-            "http://127.0.0.1:8000/predict",
+            f"{API_URL}/predict",
             json=payload
         )
 
@@ -212,7 +213,7 @@ with tab2:
     try:
 
         response = requests.get(
-            "http://127.0.0.1:8000/predictions",
+            f"{API_URL}/predictions",
             timeout=10
         )
 
