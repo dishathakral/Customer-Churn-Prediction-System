@@ -183,10 +183,18 @@ with tab1:
     }
     if predict_btn:
 
-        response = requests.post(
-            f"{API_URL}/predict",
-            json=payload
-        )
+        # response = requests.post(
+        #     f"{API_URL}/predict",
+        #     json=payload
+        # )
+        with st.spinner(
+        "Backend is processing your request. First request may take up to 1 minute..."):
+
+            response = requests.post(
+                f"{API_URL}/predict",
+                json=payload,
+                timeout=120
+            )
 
         if response.status_code == 200:
 
