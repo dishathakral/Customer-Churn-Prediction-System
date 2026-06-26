@@ -1,0 +1,11 @@
+venv/
+.git/
+customer-churn.ipynb
+Telco-Customer-Churn-dataset.csv
+streamlit_app.py
+app.log
+predictions.db
+*.db
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
