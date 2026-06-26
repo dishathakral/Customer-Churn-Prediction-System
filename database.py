@@ -1,6 +1,12 @@
+import os
 import sqlite3
 
-DB_NAME = "predictions.db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+if os.environ.get("VERCEL"):
+    DB_NAME = "/tmp/predictions.db"
+else:
+    DB_NAME = os.path.join(BASE_DIR, "predictions.db")
 
 
 def init_db():

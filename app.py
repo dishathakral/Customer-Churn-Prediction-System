@@ -8,7 +8,8 @@ import json
 from datetime import datetime
 from database import (
     init_db,
-    save_prediction
+    save_prediction,
+    DB_NAME
 )
 from fastapi import Request
 from fastapi.exceptions import RequestValidationError
@@ -46,7 +47,9 @@ logging.info(
 # Load Model Once
 # =========================
 
-artifact = joblib.load("model.pkl")
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+artifact = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
 
 model = artifact["model"]
 feature_columns = artifact["feature_columns"]
@@ -146,7 +149,7 @@ def health():
 def get_predictions():
 
     conn = sqlite3.connect(
-        "predictions.db"
+        DB_NAME
     )
 
     conn.row_factory = sqlite3.Row
