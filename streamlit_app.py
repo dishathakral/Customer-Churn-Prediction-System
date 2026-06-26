@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
-API_URL = "https://customer-churn-prediction-system-aivr.onrender.com"
+API_URL = "https://customer-churn-prediction-system-six.vercel.app"
 st.set_page_config(
     page_title="Customer Churn Predictor",
     page_icon="📊",
